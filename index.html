@@ -1,1 +1,601 @@
-<h1>this is my portfolio</h1>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocet - Ethiopia Market Opportunity</title>
+    <!-- Chosen Palette: Professional Financial (White, Slate, Blue Accent) -->
+    <!-- Application Structure Plan: A single-page dashboard with a fixed top navigation (Overview, Market, Solution, Risk, Partnership). This structure mimics a professional analysis report and allows non-linear exploration, which is ideal for data-driven analysts who want to jump to sections they care about (e.g., Risk). The flow guides from the high-level opportunity (Overview) to the evidence (Market), the product (Solution), the challenges (Risk), and the call to action (Partnership). -->
+    <!-- Visualization & Content Choices: 1. Survey Data -> Goal:Show market demand -> Viz:Chart.js Bar/Pie/Donut charts (Age, Income, Risk) -> Interaction:Tooltips -> Justification:Quickly quantifies the retail user. 2. PRD Personas -> Goal:Define users -> Viz:HTML/CSS "Tabbed" Cards -> Interaction:Click to switch persona -> Justification:Interactive way to meet the users. 3. Comp. Analysis -> Goal:Frame landscape & risk -> Viz:HTML/CSS columns (Competitors) & Toggled Tabs (Risks) -> Interaction:Click tabs -> Justification:Separates complex info clearly. 4. Arch. Diagram -> Goal:Show tech concept -> Viz:HTML/CSS Flexbox Flowchart -> Interaction:Static -> Justification:Visually represents the system without using forbidden SVG. 5. Legis. Report -> Goal:Show due diligence -> Viz:HTML list with icons (✓/⚠️) -> Interaction:Static -> Justsification:Summarizes complex legal text into key takeaways. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style type="text/css">
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        nav a.active {
+            font-weight: 600;
+            color: #1d4ed8;
+            border-bottom-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-700">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-gray-900">Stocet</span>
+                    <span class="ml-2 text-xs font-semibold text-blue-600 bg-blue-100 rounded-full px-2 py-0.5">Market Analysis</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#overview" class="nav-link text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent">Overview</a>
+                        <a href="#market" class="nav-link text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent">Market Opportunity</a>
+                        <a href="#solution" class="nav-link text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent">The Solution</a>
+                        <a href="#risk" class="nav-link text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent">Regulatory & Risk</a>
+                        <a href="#partnership" class="nav-link text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent">The Partnership</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <select id="mobile-nav" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        <option value="#overview">Overview</option>
+                        <option value="#market">Market Opportunity</option>
+                        <option value="#solution">The Solution</option>
+                        <option value="#risk">Regulatory & Risk</option>
+                        <option value="#partnership">Partnership</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-16">
+        <!-- Section 1: Overview -->
+        <section id="overview" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 text-center">The "Alpha": A Greenfield Opportunity in Ethiopia</h1>
+                <p class="mt-4 text-xl text-gray-600 text-center max-w-3xl mx-auto">
+                    We are at the precipice of a foundational shift in Ethiopia's economy. The establishment of the Ethiopian Securities Exchange (ESX) is not just a new market; it's the beginning of a new engine for capital formation. Our research confirms a massive information gap between this new opportunity and the investors who want to access it.
+                </p>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-900">The Problem: Information Vacuum</h3>
+                        <p class="mt-2 text-gray-600">Investors (both institutional and retail) lack reliable, clean, and accessible data. As one banking manager noted, "Reliable financial and risk data is a bottleneck." This creates friction, slows adoption, and increases risk.</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-sm border border-blue-200">
+                        <h3 class="text-xl font-semibold text-blue-900">The Thesis: Data-First Wins</h3>
+                        <p class="mt-2 text-gray-600">The winner in this market will not be the first to offer trading, but the first to build *trust* through data. By providing an institutional-grade "Data Terminal," Stocet becomes the authority and indispensable tool for all market participants.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-900">The Target: Institutional First</h3>
+                        <p class="mt-2 text-gray-600">Industry interviews confirm our MVP strategy: "The initial adopters... will be institutional and corporate clients." We will build for them first, establishing a B2B revenue stream while building the brand and tools for the coming retail wave.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Market Opportunity -->
+        <section id="market" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-gray-900 text-center">Quantifying the Latent Demand</h2>
+                <p class="mt-3 text-lg text-gray-600 text-center max-w-3xl mx-auto">
+                    While our initial focus is institutional, our retail investor survey reveals a massive, untapped market ready to be activated. This data proves the "why" behind the long-term vision. This section explores the quantifiable demand from retail investors and the current competitive landscape.
+                </p>
+
+                <div class="mt-12 bg-white p-8 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-semibold text-gray-900 text-center mb-8">Retail Investor Profile (Survey Highlights)</h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="flex flex-col space-y-8">
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800">Key Demographics: Young & Engaged</h4>
+                                <p class="text-gray-600">The primary cohort of potential investors is young, tech-savvy, and urban.</p>
+                                <div class="chart-container h-64 md:h-72">
+                                    <canvas id="ageChart"></canvas>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800">Investment Potential (Monthly)</h4>
+                                <p class="text-gray-600">A significant portion has disposable income they are willing to invest.</p>
+                                <div class="chart-container h-64 md:h-72">
+                                    <canvas id="investmentChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-8">
+                             <div>
+                                <h4 class="text-lg font-medium text-gray-800">Overwhelming Willingness to Invest</h4>
+                                <div class="my-4 bg-blue-600 text-white p-6 rounded-lg text-center">
+                                    <div class="text-5xl font-bold">96.3%</div>
+                                    <div class="text-lg font-medium">Are willing to invest in Ethiopia's capital markets.</div>
+                                </div>
+                                <h4 class="text-lg font-medium text-gray-800 mt-8">Risk Appetite</h4>
+                                <p class="text-gray-600">The market shows a healthy mix, with a strong base for balanced approaches.</p>
+                                <div class="chart-container h-64 md:h-72">
+                                    <canvas id="riskChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16">
+                    <h3 class="text-2xl font-semibold text-gray-900 text-center mb-8">Competitive Landscape: A "Greenfield" Market</h3>
+                    <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto">
+                        The primary competition is not other companies, but deeply ingrained behaviors. Stocet is positioned to build a new category.
+                    </p>
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-lg">
+                            <h4 class="text-xl font-semibold text-gray-900">Indirect Competition (The Incumbents)</h4>
+                            <p class="mt-2 text-gray-600">This is the true battleground: shifting capital from traditional to modern assets.</p>
+                            <ul class="mt-4 space-y-2 list-inside list-disc text-gray-600">
+                                <li><strong>Real Estate:</strong> Culturally preferred, but illiquid and requires large capital.</li>
+                                <li><strong>Savings Accounts:</strong> Safe, but offer low/negative real returns.</li>
+                                <li><strong>Traditional "Ekub":</strong> Community-based, but lacks scale and formal protection.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-blue-600">
+                            <h4 class="text-xl font-semibold text-blue-800">Direct Competition (The Emerging Players)</h4>
+                            <p class="mt-2 text-gray-600">Legacy institutions will be slow, complex, and lack a tech-first culture.</p>
+                             <ul class="mt-4 space-y-2 list-inside list-disc text-gray-600">
+                                <li><strong>Bank-Led Brokerages:</strong> Will emerge, but their focus will be on cross-selling to existing clients, not superior product UX.</li>
+                                <li><strong>Other Fintechs:</strong> No significant, focused player has emerged... yet. The window is open *now*.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Solution -->
+        <section id="solution" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-gray-900 text-center">The Solution: The Stocet Data Terminal (MVP)</h2>
+                <p class="mt-3 text-lg text-gray-600 text-center max-w-3xl mx-auto">
+                    Our MVP is an "Institutional Grade Data Engine" - Ethiopia's financial intelligence layer. We are NOT building a brokerage (yet). We are building the indispensable tool that *all* brokerages, analysts, and investors will need to use.
+                </p>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h4 class="text-xl font-semibold text-gray-900">MVP Goals</h4>
+                        <ul class="mt-4 space-y-3">
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center bg-green-100 text-green-800 rounded-full mr-3">&#10003;</span>
+                                <span>Achieve Product-Market Fit with <strong class="text-gray-900">Institutional Clients.</strong></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center bg-green-100 text-green-800 rounded-full mr-3">&#10003;</span>
+                                <span>Validate Value Proposition with <strong class="text-gray-900">Early-Adopter Retail Users.</strong></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center bg-green-100 text-green-800 rounded-full mr-3">&#10003;</span>
+                                <span>Establish Stocet as the <strong class="text-gray-900">Authority on Ethiopian Market Data.</strong></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h4 class="text-xl font-semibold text-gray-900">MVP Non-Goals</h4>
+                        <ul class="mt-4 space-y-3">
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center bg-red-100 text-red-800 rounded-full mr-3">&times;</span>
+                                <span>We will <strong class="text-gray-900">NOT</strong> build a brokerage or trade execution platform.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center bg-red-100 text-red-800 rounded-full mr-3">&times;</span>
+                                <span>We will <strong class="text-gray-900">NOT</strong> provide robo-advisory or direct financial advice.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center bg-red-100 text-red-800 rounded-full mr-3">&times;</span>
+                                <span>We will <strong class="text-gray-900">NOT</strong> cover international (non-Ethiopian) markets.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-16">
+                    <h3 class="text-2xl font-semibold text-gray-900 text-center mb-8">Target User Personas</h3>
+                    <div class="max-w-4xl mx-auto">
+                        <div class="flex justify-center space-x-4 border-b border-gray-300 mb-6">
+                            <button data-target="persona-1" class="persona-tab active text-blue-700 font-semibold py-4 px-6 border-b-2 border-blue-700">Institutional Analyst</button>
+                            <button data-target="persona-2" class="persona-tab text-gray-500 font-medium py-4 px-6 border-b-2 border-transparent hover:text-gray-800">Aspiring Retail Investor</button>
+                            <button data-target="persona-3" class="persona-tab text-gray-500 font-medium py-4 px-6 border-b-2 border-transparent hover:text-gray-800">Diaspora Investor</button>
+                        </div>
+                        <div id="persona-content" class="relative">
+                            <div id="persona-1" class="persona-pane">
+                                <h4 class="text-xl font-semibold text-gray-900">Persona 1: "Kalkidan the Analyst" (Primary Target)</h4>
+                                <p class="text-gray-600 mt-2">Works at a new investment bank or corporate. Needs clean financials, company profiles, risk analysis, and macro data to make recommendations. <strong class="text-gray-800">Her problem is the high cost (time and manual effort) of data aggregation and cleaning.</strong></p>
+                            </div>
+                            <div id="persona-2" class="persona-pane hidden">
+                                <h4 class="text-xl font-semibold text-gray-900">Persona 2: "Abel the Aspiring Investor" (Secondary Target)</h4>
+                                <p class="text-gray-600 mt-2">A young professional in Addis. Tech-savvy, reads financial news, but finds the market intimidating. <strong class="text-gray-800">His problem is a lack of trusted, understandable education and data.</strong> He will be a free user of our data terminal, building our retail funnel.</p>
+                            </div>
+                            <div id="persona-3" class="persona-pane hidden">
+                                <h4 class="text-xl font-semibold text-gray-900">Persona 3: "Hana the Diaspora Investor" (Tertiary Target)</h4>
+                                <p class="text-gray-600 mt-2">Lives in the USA. Wants to invest back home but lacks visibility and trusted tools. <strong class="text-gray-800">Her problem is a total lack of access and transparency.</strong> She needs a compliant, reliable window into the Ethiopian market.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16">
+                    <h3 class="text-2xl font-semibold text-gray-900 text-center mb-8">Conceptual System Architecture</h3>
+                    <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-10">
+                        This high-level design ensures scalability, real-time data delivery, and reliability, based on proven financial tech patterns.
+                    </p>
+                    <div class="bg-gray-800 text-white p-8 rounded-lg shadow-2xl overflow-x-auto">
+                        <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 text-center">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-semibold uppercase tracking-wider text-blue-300">Data Sources</span>
+                                <div class="mt-2 p-4 bg-gray-700 rounded-md">
+                                    <p>Market Data Feeds</p>
+                                    <p>News/RSS Feeds</p>
+                                    <p>Custom CSV</p>
+                                </div>
+                            </div>
+                            <span class="text-2xl text-blue-400 transform rotate-90 md:rotate-0">&rarr;</span>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-semibold uppercase tracking-wider text-blue-300">Ingestion & Processing</span>
+                                <div class="mt-2 p-4 bg-gray-700 rounded-md">
+                                    <p>Data Ingestion Workers</p>
+                                    <p>Message Queue (Kafka)</p>
+                                    <p>Processing Service</p>
+                                </div>
+                            </div>
+                            <span class="text-2xl text-blue-400 transform rotate-90 md:rotate-0">&rarr;</span>
+                             <div class="flex flex-col">
+                                <span class="text-sm font-semibold uppercase tracking-wider text-blue-300">Core Storage</span>
+                                <div class="mt-2 p-4 bg-gray-700 rounded-md">
+                                    <p>Database (PSQL)</p>
+                                    <p>Cache (Redis)</p>
+                                </div>
+                            </div>
+                            <span class="text-2xl text-blue-400 transform rotate-90 md:rotate-0">&rarr;</span>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-semibold uppercase tracking-wider text-blue-300">Delivery</span>
+                                <div class="mt-2 p-4 bg-gray-700 rounded-md">
+                                    <p>API Gateway</p>
+                                    <p>User Service</p>
+                                    <p>Real-Time Gateway</p>
+                                </div>
+                            </div>
+                             <span class="text-2xl text-blue-400 transform rotate-90 md:rotate-0">&rarr;</span>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-semibold uppercase tracking-wider text-blue-300">Client App</span>
+                                <div class="mt-2 p-4 bg-blue-500 rounded-md text-white font-bold">
+                                    <p>Stocet Terminal</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 4: Regulatory & Risk -->
+        <section id="risk" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-gray-900 text-center">Regulatory & Risk Analysis</h2>
+                <p class="mt-3 text-lg text-gray-600 text-center max-w-3xl mx-auto">
+                    A core part of our thesis is transparency. We have deeply analyzed the legislative landscape and key market risks. Our strategy is built to navigate these challenges, not ignore them.
+                </p>
+
+                <div class="mt-12 max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div class="flex border-b border-gray-300">
+                        <button data-target="tab-legislative" class="risk-tab flex-1 py-4 px-6 font-semibold text-blue-700 border-b-2 border-blue-700">Legislative Landscape</button>
+                        <button data-target="tab-market" class="risk-tab flex-1 py-4 px-6 font-medium text-gray-500 hover:text-gray-800 border-b-2 border-transparent">Key Market Risks</button>
+                    </div>
+                    <div class="p-8">
+                        <div id="tab-legislative" class="risk-pane">
+                            <h3 class="text-xl font-semibold text-gray-900">Key Legislative Research Findings</h3>
+                            <p class="text-gray-600 mt-2">The law is new, but it explicitly enables our vision. Our "compliance-first" approach positions us as an ally to regulators.</p>
+                            <ul class="mt-6 space-y-4">
+                                <li class="flex items-start">
+                                    <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center bg-green-100 text-green-800 rounded-full mr-3 text-sm">&#10003;</span>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900">Enabling Framework</h4>
+                                        <p class="text-gray-600">The law explicitly enables IT linkages, electronic trading platforms, and licensing for market data providers.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center bg-green-100 text-green-800 rounded-full mr-3 text-sm">&#10003;</span>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900">Phased Go-to-Market</h4>
+                                        <p class="text-gray-600">Our research confirms our strategy: (A) Data terminal & analytics (fastest, lowest friction), followed by (B) middleware for brokers.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center bg-yellow-100 text-yellow-800 rounded-full mr-3 text-sm">&#9888;</span>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900">High Compliance Bar</h4>
+                                        <p class="text-gray-600">High capital, governance, and operational standards are set for operators. This is a barrier to *others*, but an opportunity for our tech-first, compliance-focused build.</p>
+                                    </div>
+                                </li>
+                                 <li class="flex items-start">
+                                    <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center bg-yellow-100 text-yellow-800 rounded-full mr-3 text-sm">&#9888;</span>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900">Tech & Cyber Compliance</h4>
+                                        <p class="text-gray-600">KYC, data privacy (Proclamation 128/2024), and business continuity are non-negotiable. Our architecture is designed for this from day one.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tab-market" class="risk-pane hidden">
+                             <h3 class="text-xl font-semibold text-gray-900">Key Business Risks & Mitigation</h3>
+                             <p class="text-gray-600 mt-2">Every high-growth opportunity has risks. Here is how we've planned for them.</p>
+                            <ul class="mt-6 space-y-4">
+                                <li>
+                                    <h4 class="font-medium text-gray-900">Risk: Regulatory Hurdles</h4>
+                                    <p class="text-gray-600"><strong class="text-blue-700">Mitigation:</strong> Engage with regulators early and build a culture of compliance from day one. Our "Data Terminal First" strategy has the lowest regulatory friction.</p>
+                                </li>
+                                <li>
+                                    <h4 class="font-medium text-gray-900">Risk: Low Market Adoption</h4>
+                                    <p class="text-gray-600"><strong class="text-blue-700">Mitigation:</strong> This is the biggest risk. Our strategy directly addresses this by focusing on education and building demand *before* launching a full trading product. We are solving the *information* problem first.</p>
+                                </li>
+                                 <li>
+                                    <h4 class="font-medium text-gray-900">Risk: Competition from Banks</h4>
+                                    <p class="text-gray-600"><strong class="text-blue-700">Mitigation:</strong> Banks are not tech companies. By the time they launch a passable product, Stocet will already have the strongest brand, a loyal user base (B2B and B2C), and a superior, faster product.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: The Partnership -->
+        <section id="partnership" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-gray-900">The Partnership: Why We Will Win</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">
+                    We cannot win with more money or a bigger brand than the banks. We will win by being smarter, faster, and more trusted. This is a technology and design challenge that legacy institutions are ill-equipped to win.
+                </D>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="text-4xl text-blue-600">🎯</div>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-900">Superior Product & UX</h3>
+                        <p class="mt-2 text-gray-600">An obsessive focus on creating the best, simplest, and most reliable user experience. This is a design and technology moat that banks cannot easily cross.</p>
+                    </div>
+                     <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="text-4xl">⚡️</div>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-900">Agility & Speed</h3>
+                        <p class="mt-2 text-gray-600">The ability to update, add features, and respond to customer feedback in weeks, not years. We are a speedboat; they are an oil tanker.</p>
+                    </div>
+                     <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="text-4xl">🤝</div>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-900">Authentic Brand & Content</h3>
+                        <p class="mt-2 text-gray-600">We will build a brand that speaks the language of ambitious, modern Ethiopians. We will create educational content that is genuinely helpful, building a community, not just a customer base.</p>
+                    </div>
+                </div>
+
+                <div class="mt-16 max-w-2xl mx-auto bg-blue-700 text-white p-10 rounded-lg shadow-xl">
+                    <h3 class="text-3xl font-bold">The Ask</h3>
+                    <p class="mt-4 text-lg text-blue-100">
+                        We have the research, the strategy, and the technical foundation. We are seeking partners who bring not just capital, but deep market expertise to help us navigate this "greenfield" opportunity. We are looking for Wall Street expertise to help build Ethiopia's Bloomberg.
+                    </p>
+                    <p class="mt-6 font-semibold text-lg">Let's build the financial intelligence engine for Ethiopia's next 50 years, together.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const chartData = {
+                age: {
+                    labels: ['18-24', '25-34', '35-44', '45-54'],
+                    data: [15, 10, 2, 0] 
+                },
+                investment: {
+                    labels: ['< 1,000 ETB', '1,000 - 5,000 ETB', '5,001 - 10,000 ETB', '10,001 - 50,000 ETB', '50,000+ ETB'],
+                    data: [6, 11, 4, 3, 3] 
+                },
+                risk: {
+                    labels: ['Low (capital preservation)', 'Medium (balanced)', 'High (maximum growth)'],
+                    data: [8, 16, 3] 
+                }
+            };
+
+            const commonOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { size: 12 },
+                            padding: 20
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: '#333',
+                        titleFont: { weight: 'bold' },
+                        bodyFont: { size: 12 },
+                        cornerRadius: 4,
+                        displayColors: true
+                    }
+                }
+            };
+
+            if (document.getElementById('ageChart')) {
+                new Chart(document.getElementById('ageChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: chartData.age.labels,
+                        datasets: [{
+                            label: 'Age Range',
+                            data: chartData.age.data,
+                            backgroundColor: 'rgba(29, 78, 216, 0.7)',
+                            borderColor: 'rgba(29, 78, 216, 1)',
+                            borderWidth: 1,
+                            borderRadius: 4
+                        }]
+                    },
+                    options: {
+                        ...commonOptions,
+                        scales: {
+                            y: { beginAtZero: true }
+                        },
+                        plugins: { ...commonOptions.plugins, legend: { display: false } }
+                    }
+                });
+            }
+
+            if (document.getElementById('investmentChart')) {
+                new Chart(document.getElementById('investmentChart'), {
+                    type: 'pie',
+                    data: {
+                        labels: chartData.investment.labels,
+                        datasets: [{
+                            label: 'Monthly Investment (ETB)',
+                            data: chartData.investment.data,
+                            backgroundColor: [
+                                'rgba(219, 234, 254, 1)',
+                                'rgba(147, 197, 253, 1)',
+                                'rgba(59, 130, 246, 1)',
+                                'rgba(29, 78, 216, 1)',
+                                'rgba(30, 58, 138, 1)'
+                            ],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: commonOptions
+                });
+            }
+
+            if (document.getElementById('riskChart')) {
+                new Chart(document.getElementById('riskChart'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: chartData.risk.labels,
+                        datasets: [{
+                            label: 'Risk Tolerance',
+                            data: chartData.risk.data,
+                            backgroundColor: [
+                                'rgba(52, 211, 153, 0.7)',
+                                'rgba(251, 191, 36, 0.7)',
+                                'rgba(239, 68, 68, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgba(5, 150, 105, 1)',
+                                'rgba(217, 119, 6, 1)',
+                                'rgba(185, 28, 28, 1)'
+                            ],
+                            borderWidth: 1,
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: commonOptions
+                });
+            }
+
+            const personaTabs = document.querySelectorAll('.persona-tab');
+            const personaPanes = document.querySelectorAll('.persona-pane');
+
+            personaTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    personaTabs.forEach(t => {
+                        t.classList.remove('active', 'text-blue-700', 'font-semibold', 'border-blue-700');
+                        t.classList.add('text-gray-500', 'font-medium', 'border-transparent');
+                    });
+                    tab.classList.add('active', 'text-blue-700', 'font-semibold', 'border-blue-700');
+                    tab.classList.remove('text-gray-500', 'font-medium', 'border-transparent');
+                    
+                    const targetId = tab.dataset.target;
+                    personaPanes.forEach(pane => {
+                        if (pane.id === targetId) {
+                            pane.classList.remove('hidden');
+                        } else {
+                            pane.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            const riskTabs = document.querySelectorAll('.risk-tab');
+            const riskPanes = document.querySelectorAll('.risk-pane');
+
+            riskTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    riskTabs.forEach(t => {
+                        t.classList.remove('text-blue-700', 'font-semibold', 'border-blue-700');
+                        t.classList.add('text-gray-500', 'font-medium', 'border-transparent');
+                    });
+                    tab.classList.add('text-blue-700', 'font-semibold', 'border-blue-700');
+                    tab.classList.remove('text-gray-500', 'font-medium', 'border-transparent');
+                    
+                    const targetId = tab.dataset.target;
+                    riskPanes.forEach(pane => {
+                        if (pane.id === targetId) {
+                            pane.classList.remove('hidden');
+                        } else {
+                            pane.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            const navLinks = document.querySelectorAll('header nav a, #mobile-nav option');
+            const mobileNav = document.getElementById('mobile-nav');
+            
+            navLinks.forEach(link => {
+                if (link.tagName === 'A') {
+                    link.addEventListener('click', e => {
+                        e.preventDefault();
+                        const targetId = e.currentTarget.getAttribute('href');
+                        document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+                        if (mobileNav.value !== targetId) mobileNav.value = targetId;
+                    });
+                }
+            });
+
+            mobileNav.addEventListener('change', e => {
+                const targetId = e.target.value;
+                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
+
+            const sections = document.querySelectorAll('section');
+            const desktopNavLinks = document.querySelectorAll('header nav a.nav-link');
+            
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = '#' + entry.target.id;
+                        desktopNavLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === id) {
+                                link.classList.add('active');
+                            }
+                        });
+                        if (mobileNav.value !== id) {
+                            mobileNav.value = id;
+                        }
+                    }
+                });
+            }, { rootMargin: '-80px 0px -40% 0px', threshold: 0 });
+
+            sections.forEach(section => observer.observe(section));
+
+        });
+    </script>
+</body>
+</html>
